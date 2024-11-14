@@ -1,9 +1,10 @@
 "use client";
+import Script from "next/script";
 import QuoteBox from "../components/QuoteBox";
 
 export default function Home() {
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
+    <div style={{ padding: "20px" }}>
       <QuoteBox />
     </div>
   );

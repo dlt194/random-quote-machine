@@ -1,5 +1,5 @@
 import "./globals.css";
-import Head from "next/head";
+
 import Providers from "./providers"; // Import the Client Component
 
 export const metadata = {
@@ -14,10 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-      </Head>
-      <body>
+      <head>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
+          defer
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
+        ></script>
+      </head>
+      <body className="bg-green-800">
         <Providers>{children}</Providers>
       </body>
     </html>

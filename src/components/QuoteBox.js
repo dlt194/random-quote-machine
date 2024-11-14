@@ -44,24 +44,29 @@ const QuoteBox = () => {
       className="container w-[60%] m-auto text-center p-4 my-5 border rounded shadow-lg"
     >
       <CardHeader>
-        <CardTitle id="text">{quote}</CardTitle>
+        <CardTitle id="text" className="p-0">
+          <h5>{quote}</h5>
+        </CardTitle>
       </CardHeader>
       <CardContent>
-        <p id="author">- {author}</p>
+        <p id="author" className="pb-10">
+          - {author}
+        </p>
         <Button id="new-quote" className="p-2 m-2" onClick={fetchNewQuote}>
           New Quote
         </Button>
-        <Button id="tweet-quote" className="p-2 m-2">
-          <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-              `"${quote}" - ${author}`
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tweet Quote
-          </a>
-        </Button>
+
+        <a
+          className="inline-block px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          id="tweet-quote"
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            `"${quote}" - ${author}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Tweet Quote
+        </a>
       </CardContent>
       <CardFooter className="flex justify-center items-center p-2">
         <p className="mb-0 text-sm text-gray-500">

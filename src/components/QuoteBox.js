@@ -19,7 +19,6 @@ const QuoteBox = () => {
   const quote = useSelector((state) => state.quotes.quote);
   const author = useSelector((state) => state.quotes.author);
 
-  console.log("Quote:", quote, "Author:", author);
   const dispatch = useDispatch();
 
   // Fetch a new quote from the API
@@ -28,7 +27,6 @@ const QuoteBox = () => {
       const response = await fetch(QUOTE_API_URL);
       const data = await response.json();
 
-      console.log("API Response:", data);
       dispatch(newQuoteAction(data));
     } catch (error) {
       console.error("Error fetching quote:", error);

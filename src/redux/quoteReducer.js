@@ -10,11 +10,6 @@ const initialState = {
 const quoteReducer = (state = initialState, action) => {
   switch (action.type) {
     case NEW_QUOTE:
-      console.log(
-        "Updating State:",
-        action.payload.quote,
-        action.payload.author
-      );
       return {
         ...state,
         quote: action.payload.quote,

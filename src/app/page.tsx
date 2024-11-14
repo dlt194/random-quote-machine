@@ -1,5 +1,5 @@
 "use client";
-import Script from "next/script";
+
 import QuoteBox from "../components/QuoteBox";
 
 export default function Home() {
